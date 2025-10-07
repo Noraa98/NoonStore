@@ -4,35 +4,33 @@ using Noon.Services.Contracts;
 
 namespace Noon.Services.Services
 {
-    public class CustomerService : ICustomerService
+    public class SupplierService : ISupplierService
     {
-        private readonly ICustomerRepo _repo;
-
-        public CustomerService(ICustomerRepo repo)
+        private readonly ISupplierRepo _repo;
+        public SupplierService(ISupplierRepo repo)
         {
             _repo = repo;
         }
-        public IEnumerable<Customer> GetList()
+        public IEnumerable<Supplier> GetList()
         {
             return _repo.GetList();
         }
-        public Customer GetById(int id)
+        public Supplier GetById(int id)
         {
             return _repo.GetById(id);
         }
-        public void Add(Customer customer)
+        public void Add(Supplier supplier)
         {
-            _repo.Add(customer);
+            _repo.Add(supplier);
         }
-        public void Update(Customer customer)
+        public void Update(Supplier supplier)
         {
-            _repo.Update(customer);
+            _repo.Update(supplier);
         }
         public void Delete(int id)
         {
             _repo.Delete(id);
         }
-
 
 
     }
